@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="POST">
+        <input type="email" name="email" placeholder="email">
+        <input type="password" name="password" placeholder="password">
+        <button  id="btn">Login</button>
+    </form>
+    <script>
+        
+        const button = document.getElementById("btn");
+        button.addEventListener('click', handleSubmit);
+        console.log(button)
+        function handleSubmit(){
+            console.log("triggered")
+            const email = document.getElementsByName("email")[0].value;
+            const password = document.getElementsByName("password")[0].value;
+            console.log(JSON.stringify({email, password}))
+            fetch("http://localhost:8000/api/login", {
+                method: "POST",
+                method: "cors",
+                headers: {
+                    'Content-Type': "application/json"
+                },
+                credentials: "include",
+                body: JSON.stringify({email, password})
+            }).then(res => res.json()).then(data => {
+                if(data.success) localStorage.setItem("job-cookie", "true");
+            });
+        }
+    </script>
+</body>
+</html>
