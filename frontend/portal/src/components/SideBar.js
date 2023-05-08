@@ -101,7 +101,7 @@ export default function Sidebar({ username, avatar, createdAt, email, lastLogin 
                     <Avatar size="sm" src="avatar-1.jpg" />
                     <Flex flexDir="column" ml={4} display={navSize == "small" ? "none" : "flex"}>
                         <Heading as="h3" size="sm">{username}</Heading>
-                        <Text color="gray" fontSize={'sm'}>@{email.split('@')[0]}</Text>
+                        <Text color="gray" fontSize={'sm'}>@{email.split("@")[0]}</Text>
                         <Text color="gray" fontSize={'xx-small'}>{lastLogin}</Text>
                     </Flex>
                 </Flex>

@@ -12,7 +12,7 @@ function getCookie(name) {
     if (parts.length === 2) return parts.pop().split(';').shift();
 }
 
-export default function () {
+export default function Home () {
     const cookie = localStorage.getItem('job_cookie');
     const history = useNavigate();
     const [userData, setUserData] = useState();
@@ -69,7 +69,6 @@ export default function () {
                 <Flex flexDirection="row">
                     <Sidebar username={userData.name} email={userData.email} lastLogin={new Date(userData.last_login).toDateString()}/>
                     <Main ></Main>
-               
                 </Flex>
     
             </>

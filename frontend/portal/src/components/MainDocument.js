@@ -9,12 +9,9 @@ async function getJobDetails(){
 export function Main(){
     return (
         <>
-        <Header></Header>
-        <Box>
-             
-          
-             <JobGrid></JobGrid>
-           </Box>
+        <Header>
+        
+        </Header>
         </>
     )
 }

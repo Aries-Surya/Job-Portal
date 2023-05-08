@@ -1,7 +1,9 @@
+import smtplib, ssl
 from .models import User, JobData
 from django.http.response import JsonResponse
 from django.contrib.auth import authenticate, login, logout
 from .serializers import UserSerializer, JobSerializer
+# from django.shortcuts import render    
 def createUser(request):
     email = request.data['email']
     password = request.data['password']
@@ -50,3 +52,30 @@ def getJobs(request):
         data = JobData.objects.all()
         serializer_data = JobSerializer(instance=data, many=True)
         return JsonResponse(serializer_data.data, safe=False)
+    
+
+
+def approveUser(request):
+    if request.method == "POST":
+        id = request.data["jobId"]
+        # port = 465  # For SSL
+        password = "Test@1234"
+        s= smtplib.SMTP("smtp.gmail.com", 587)
+        s.starttls()
+        s.login("suryatest81@gmail.com", password=password)
+        # Create a secure SSL context
+        # context = ssl.create_default_context()
+
+        try:
+            user_email = request.user.email
+            appliedJob = JobData.objects.filter(id=id)
+            jobTitle  = appliedJob.title
+            jobBy = appliedJob.provider_name
+            s.sendmail("suryatest81@gmail.com", user_email, f"Congratulations You have been selected for {appliedJob} by {jobBy}")
+        finally:
+            s.quit()
+        # with smtplib.SMTP_SSL("smtp.gmail.com", port, context=context) as server:
+        #     server.login("suryatest81@gmail.com", password)
+    return JsonResponse({"success": "email sent"})
+
+

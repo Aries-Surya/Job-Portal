@@ -55,12 +55,12 @@ class User(AbstractBaseUser):
 class JobData(models.Model):
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
-    provider_name = models.CharField(max_length=20, default="Anonymous")
+    provider_name = models.CharField(max_length=120, default="Anonymous")
     profile_url = models.URLField(unique=False)
     job_title = models.CharField(max_length=30, default="Job Title")
     job_description = models.TextField()
     popularity = models.IntegerField(default=0)
-
+    location = models.CharField(max_length=120, default="Not Provided")
 
 
 
