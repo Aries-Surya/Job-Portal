@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-# Job-Portal
-=======
-
 # JobPortalWebApp
 
 # Description:
