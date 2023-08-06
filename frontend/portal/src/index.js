@@ -13,13 +13,13 @@ import {
 import { ChakraProvider } from "@chakra-ui/react"
 import Home from './pages/Home';
 import SignUp from './pages/Sign_Up';
-import theme from './themes/theme';
+// import theme from './themes/theme';
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
-      <Route path="/" element={<App />}/>
-      <Route path="/home" element={<Home />}/>
-      <Route path="/signup" element={<SignUp />}/>
+      <Route path="/" element={<App />} />
+      <Route path="/home" element={<Home />} />
+      <Route path="/signup" element={<SignUp />} />
     </Route>
   )
 
