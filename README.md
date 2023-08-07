@@ -27,4 +27,3 @@ Job Listings: The application displays job listings with detailed information ab
 
 - [@aries-surya](https://www.github.com/aries-surya)
 
->>>>>>> 1e433ea84b6cc5e88c57e2683fce6f8741dbbac6
