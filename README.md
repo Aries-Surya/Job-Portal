@@ -21,7 +21,15 @@ Job Listings: The application displays job listings with detailed information ab
 
 # Installation and Usage:
 
-
+# Screenshots
+**login-Page**
+![Screenshot](https://aries-surya.github.io/NBA-Website/img/login-Page.png)
+**Signup-Page**
+![Screenshot](https://aries-surya.github.io/NBA-Website/img/Signup-Page.png)
+**UserPage(Dark)**
+![Screenshot](https://aries-surya.github.io/NBA-Website/img/UserPage(Dark).png)
+**UserPage(White)**
+![Screenshot](https://aries-surya.github.io/NBA-Website/img/UserPage(White).png)
 
 ## Authors
 
